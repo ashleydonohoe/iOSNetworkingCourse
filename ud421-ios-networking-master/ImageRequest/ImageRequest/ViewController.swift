@@ -20,9 +20,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getImage()
+    }
+    
+    func getImage() {
         // TODO: Add all the networking code here!
-        let imageURL = NSURL(string: "http://kathyharrisbooks.com/wp-content/uploads/2013/05/Misty-Edwards.jpg")!
+        let imageURL = NSURL(string: "http://g-ecx.images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg")!
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(imageURL) { (data, response, error) in
             if error == nil {
@@ -34,5 +37,6 @@ class ViewController: UIViewController {
         }
         
         task.resume()
+        
     }
 }
